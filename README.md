@@ -9,7 +9,8 @@
 <div align="center">
 
 ```
-  crafting backends that scale  ·  wiring AI that thinks  ·  decent at the frontend too
+  Crafting Backends That Scale  ·  Applied AI & Agents  ·  Full-Stack Capable
+
 ```
 
 </div>
@@ -39,6 +40,7 @@ Most of my time goes into designing scalable backend systems with **Node.js** an
 ![Express.js](https://img.shields.io/badge/Express.js-14161A?style=for-the-badge&logo=express&logoColor=ffffff)
 ![FastAPI](https://img.shields.io/badge/FastAPI-14161A?style=for-the-badge&logo=fastapi&logoColor=009688)
 ![MongoDB](https://img.shields.io/badge/MongoDB-14161A?style=for-the-badge&logo=mongodb&logoColor=47A248)
+![Redis](https://img.shields.io/badge/Redis-14161A?style=for-the-badge&logo=redis&logoColor=FF4438)
 
 #### Applied AI
 ![LangGraph](https://img.shields.io/badge/LangGraph-14161A?style=for-the-badge&logo=langchain&logoColor=1C3C3C)
@@ -48,6 +50,7 @@ Most of my time goes into designing scalable backend systems with **Node.js** an
 
 #### Frontend
 ![React](https://img.shields.io/badge/React-14161A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-14161A?style=for-the-badge&logo=tailwind-css&logoColor=06B6D4)
 
 ---
 
@@ -56,13 +59,13 @@ Most of my time goes into designing scalable backend systems with **Node.js** an
 ---
 
 #### ⚙️ [AlgoHub](https://github.com/yash-dev26/algohub)
-> A full-scale distributed code submission and evaluation platform — think LeetCode, built from scratch. Users submit code, it gets queued, executed inside isolated Docker containers per language, validated against test cases, and results are pushed back in real time via WebSockets.
+> Architected a distributed online judge across 4 decoupled microservices—Enqueuer, Evaluation, Problem, and WebSocket services—designed for independent scalability and high-performance code execution.
 
-- **4 microservices**: Enqueuer · Evaluation · Problem · WebSocket
-- **BullMQ + Redis** queue for async submission processing
-- **Docker-isolated execution** for Python, Java, and C++ (strategy pattern per language)
-- **Real-time result delivery** via WebSocket service to the React frontend
-- Clean layered architecture in TypeScript across all services
+* **Distributed Microservices:** Engineered a decoupled ecosystem using **Fastify**, implementing **Zod** validation, DTOs, and the **Repository Pattern** for a production-grade, maintainable codebase.
+* **Secure Execution Sandbox:** Built a language-agnostic container factory using **Dockerode** to safely isolate and execute user code (C++, Python, Java) against hidden test cases.
+* **Async Pipeline & Monitoring:** Implemented a robust async submission pipeline using **BullMQ (Redis-backed)** with separate evaluation queues and **Bull Board** for real-time system monitoring.
+* **Real-Time Verdicts:** Integrated a dedicated **WebSocket service** to push live evaluation results to the client, providing a seamless, low-latency user experience.
+* **Modern Interface:** Built a **React + TypeScript** frontend featuring a resizable **Ace Editor**, multi-language support, and Markdown-rendered problem statements.
 
 ![TypeScript](https://img.shields.io/badge/-TypeScript-14161A?style=flat-square&logo=typescript&logoColor=3178C6)
 ![Node.js](https://img.shields.io/badge/-Node.js-14161A?style=flat-square&logo=nodedotjs&logoColor=339933)
@@ -89,12 +92,12 @@ Most of my time goes into designing scalable backend systems with **Node.js** an
 ---
 
 #### 🤖 [LangGraph Checkpointer Support](https://github.com/yash-dev26/langgraph-checkpointer-support)
-> A stateful AI support agent built with LangGraph that can pause mid-conversation, persist state to MongoDB, and resume once a human support agent provides input.
+> Developed a stateful AI support agent featuring persistent conversation memory and seamless human-in-the-loop escalation capabilities.
 
-- **Human-in-the-loop** escalation via LangGraph interrupts
-- **MongoDB checkpointing** for persistent, thread-based sessions
-- Clean role separation: `app.py` (user) · `support.py` (agent) · `graph.py` (AI logic)
-- Streaming responses with graceful interrupt handling
+* **Stateful Orchestration:** Utilized **LangGraph interrupts** to pause AI execution, allowing for human review and manual intervention in complex support flows.
+* **Persistent Sessions:** Engineered **MongoDB checkpointing** to manage long-running, thread-based sessions that persist across server restarts.
+* **Hybrid Architecture:** Maintained strict role separation between user interfaces (`app.py`), support dashboards (`support.py`), and the core graph logic.
+* **Streaming & Resilience:** Optimized for real-time streaming responses with graceful handling of mid-stream interrupts and state re-hydration.
 
 ![Python](https://img.shields.io/badge/-Python-14161A?style=flat-square&logo=python&logoColor=3776AB)
 ![LangGraph](https://img.shields.io/badge/-LangGraph-14161A?style=flat-square&logo=langchain&logoColor=1C3C3C)
@@ -104,13 +107,13 @@ Most of my time goes into designing scalable backend systems with **Node.js** an
 ---
 
 #### 🔐 [Scalable Auth Service](https://github.com/yash-dev26/scalable-auth-service)
-> A production-ready authentication microservice in Node.js + Express with full JWT flows, multi-device session management, OTP email verification, and Argon2 password hashing.
+> Built a production-hardened authentication microservice using a clean `Routes → Controller → Service → Repository` layered architecture to ensure strict separation of concerns and long-term maintainability.
 
-- **JWT** Access + Refresh token rotation with HTTP-only cookies
-- **Multi-device session** tracking and revocation (logout single / all)
-- **OTP email flow** for registration and password reset
-- **Rate limiting** on sensitive routes + Argon2 hashing throughout
-- Clean layered architecture: `Routes → Controller → Service → Repository → DB`
+* **Hardened Security:** Integrated **Argon2** for high-entropy hashing of passwords, OTPs, and refresh tokens; implemented tiered **Rate Limiting** across 9 distinct endpoints to mitigate brute-force and DoS attacks.
+* **Advanced Session Management:** Developed a multi-device tracking system featuring **Refresh Token Rotation** and HTTP-only cookies, enabling granular session revocation (single-device logout vs. global "logout all").
+* **Automated Data Lifecycle:** Orchestrated **MongoDB TTL (Time-To-Live) indexes** for automated expiry of temporary data and used **Nodemailer + OAuth2** for secure Email/OTP verification flows.
+* **Architectural Integrity:** Focused on scalability by decoupling business logic from the database layer, allowing for easy testing and potential migration of individual service components.
+* **Clean layered architecture:** `Routes → Controller → Service → Repository → DB`
 
 ![Node.js](https://img.shields.io/badge/-Node.js-14161A?style=flat-square&logo=nodedotjs&logoColor=339933)
 ![Express](https://img.shields.io/badge/-Express-14161A?style=flat-square&logo=express&logoColor=ffffff)
@@ -123,7 +126,7 @@ Most of my time goes into designing scalable backend systems with **Node.js** an
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-yash--dev26-14161A?style=for-the-badge&logo=github&logoColor=ffffff)](https://github.com/yash-dev26)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-yashwardhan--singh-14161A?style=for-the-badge&logo=linkedin&logoColor=0A66C2)](https://www.linkedin.com/in/yashwardhan-singh-a5191a330)
 [![Twitter](https://img.shields.io/badge/Twitter-@SinghGeekjs-14161A?style=for-the-badge&logo=x&logoColor=ffffff)](https://twitter.com/SinghGeekjs)
 
 </div>
