@@ -76,20 +76,24 @@ Most of my time goes into designing scalable backend systems with **Node.js** an
 
 ---
 
-#### 🧠 [Adaptive RAG](https://github.com/yash-dev26/adaptive-rag) &nbsp; `WIP`
-> An intelligent RAG system that routes queries through a LangGraph agent — deciding whether to retrieve from a vector store, rewrite the query, rerank results, or just answer directly with an LLM.
-
-- **Planner node** classifies intent and routes accordingly
-- **Multi/Single query rewrite** for better retrieval coverage
-- **Reranking layer** before generation for precision
-- Built on **FastAPI + LangGraph + Qdrant + OpenAI**
+#### 🧠 [Adaptive RAG](https://github.com/yash-dev26/adaptive-rag) &nbsp; [`Live`](https://adaptive-rag-1.vercel.app)
+> A production-oriented Adaptive RAG system built with a LangGraph agent that dynamically routes queries — deciding whether to retrieve, rewrite, rerank, or answer directly — with semantic caching, multi-provider LLM orchestration, and a full React frontend.
+- **LangGraph agent** with pre/post-planner routing — decides between direct LLM, single rewrite, multi rewrite, rerank, or fallback paths
+- **Single & multi-query rewrite** with Reciprocal Rank Fusion (RRF) for better coverage
+- **Retrieval evaluation + reranking** layer for precision before generation
+- **Semantic + response caching** via Redis to reduce latency and cost
+- **Multi-provider inference** : Groq (rewrites/eval) + OpenAI (embeddings/generation)
+- **PDF ingestion** with chunking, duplicate detection, and document-scoped retrieval
+- **Streaming graph execution** over SSE with per-node trace visibility on the frontend
 
 ![Python](https://img.shields.io/badge/-Python-14161A?style=flat-square&logo=python&logoColor=3776AB)
 ![LangGraph](https://img.shields.io/badge/-LangGraph-14161A?style=flat-square&logo=langchain&logoColor=1C3C3C)
 ![FastAPI](https://img.shields.io/badge/-FastAPI-14161A?style=flat-square&logo=fastapi&logoColor=009688)
 ![Qdrant](https://img.shields.io/badge/-Qdrant-14161A?style=flat-square&logo=qdrant&logoColor=DC244C)
-
----
+![Redis](https://img.shields.io/badge/-Redis-14161A?style=flat-square&logo=redis&logoColor=FF4438)
+![React](https://img.shields.io/badge/-React-14161A?style=flat-square&logo=react&logoColor=61DAFB)
+![OpenAI](https://img.shields.io/badge/-OpenAI-14161A?style=flat-square&logo=openai&logoColor=FFFFFF)
+![Groq](https://img.shields.io/badge/-Groq-14161A?style=flat-square&logo=groq&logoColor=F55036)
 
 #### 🤖 [LangGraph Checkpointer Support](https://github.com/yash-dev26/langgraph-checkpointer-support)
 > Developed a stateful AI support agent featuring persistent conversation memory and seamless human-in-the-loop escalation capabilities.
