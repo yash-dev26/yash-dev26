@@ -61,32 +61,44 @@ My focus areas are **distributed backend architecture**, **RAG pipelines**, **LL
 
 ## 💻 Featured Projects
 
-### 🧠 [Adaptive RAG](https://adaptive-rag-1.vercel.app/)
+#### 🧠 [Adaptive RAG](https://github.com/yash-dev26/adaptive-rag) &nbsp; [`Live`](https://adaptive-rag-1.vercel.app/)
+> A production-oriented RAG system that treats retrieval as a series of decisions, not a fixed pipeline — built with LangGraph orchestration on top of a full-stack, bring-your-own-key architecture.
 
-A **production-oriented RAG system** that treats retrieval as a series of decisions, not a fixed pipeline — built with LangGraph orchestration on top of a full-stack, bring-your-own-key architecture.
+* **Adaptive Routing:** Designed a heuristic + LLM planner that decides whether a query even needs retrieval, skipping the vector store entirely for chit-chat or general knowledge.
+* **CRAG-Style Evaluation:** Built a grading layer that scores retrieved context on relevance (similarity heuristics first, LLM grader as fallback) and routes to *generate*, *rewrite & retry*, or *fall back to general knowledge*.
+* **Query Rewriting with RRF:** Implemented single/multi-query rewriting with Reciprocal Rank Fusion for ambiguous, context-dependent questions before they hit the retriever.
+* **Cost-Aware Reranking:** Integrated a Cohere reranker that only fires on ambiguous rankings, skipping straight to generation when there's a clear score gap.
+* **Semantic + Response Caching:** Engineered a Redis-backed caching layer alongside multi-provider LLM orchestration (OpenAI + Groq) and document-scoped PDF ingestion with duplicate detection.
+* **Streaming & History:** Built streaming graph execution with live node-by-node tracing on the frontend, full chat history via MongoDB-backed threads, and a no-login BYOK flow (your API keys, used per-request, never stored).
 
-- **Adaptive routing**: a heuristic + LLM planner decides whether a query even needs retrieval, skipping the vector store entirely for chit-chat or general knowledge.
-- **CRAG-style evaluation**: retrieved context is graded on relevance (similarity heuristics first, LLM grader as fallback) and routed to *generate*, *rewrite & retry*, or *fall back to general knowledge*.
-- **Query rewriting with RRF** for ambiguous, context-dependent questions before they ever hit the retriever.
-- **Cost-aware reranking**: only ambiguous rankings get sent to a Cohere reranker; a clear score gap skips straight to generation.
-- **Semantic + response caching** via Redis, multi-provider LLM orchestration (OpenAI + Groq), and document-scoped PDF ingestion with duplicate detection.
-- Streaming graph execution with live node-by-node tracing on the frontend, full chat history with MongoDB-backed threads, and a no-login BYOK flow (your API keys, used per-request, never stored).
-
-**Tech:** `Python` `FastAPI` `LangGraph` `LangChain` `Qdrant` `Redis` `MongoDB` `OpenAI` `Groq` `Cohere` `React` `Vite`
+![Python](https://img.shields.io/badge/-Python-14161A?style=flat-square&logo=python&logoColor=3776AB)
+![LangGraph](https://img.shields.io/badge/-LangGraph-14161A?style=flat-square&logo=langchain&logoColor=1C3C3C)
+![FastAPI](https://img.shields.io/badge/-FastAPI-14161A?style=flat-square&logo=fastapi&logoColor=009688)
+![Qdrant](https://img.shields.io/badge/-Qdrant-14161A?style=flat-square&logo=qdrant&logoColor=DC244C)
+![Redis](https://img.shields.io/badge/-Redis-14161A?style=flat-square&logo=redis&logoColor=FF4438)
+![MongoDB](https://img.shields.io/badge/-MongoDB-14161A?style=flat-square&logo=mongodb&logoColor=47A248)
+![OpenAI](https://img.shields.io/badge/-OpenAI-14161A?style=flat-square&logo=openai&logoColor=FFFFFF)
+![Groq](https://img.shields.io/badge/-Groq-14161A?style=flat-square&logo=groq&logoColor=F55036)
+![React](https://img.shields.io/badge/-React-14161A?style=flat-square&logo=react&logoColor=61DAFB)
 
 ---
 
-### ⚙️ AlgoHub
+#### ⚙️ [AlgoHub](https://github.com/yash-dev26/algohub)
+> A distributed, LeetCode-style code judge built on a microservices architecture, capable of securely compiling and executing arbitrary user code across multiple languages at scale.
 
-A **distributed, LeetCode-style code judge** built on a microservices architecture, capable of securely compiling and executing arbitrary user code across multiple languages at scale.
+* **Distributed Microservices:** Architected 4 decoupled services — enqueuer, evaluation, problem management, and WebSocket delivery — each independently scalable and deployable.
+* **Secure Execution Sandbox:** Built isolated, Docker-based code execution to safely run untrusted submissions across multiple languages.
+* **Async Pipeline & Monitoring:** Implemented an asynchronous evaluation pipeline using BullMQ + Redis, decoupling submission intake from execution.
+* **Real-Time Verdicts:** Integrated a dedicated WebSocket service to push live evaluation results to the client — no polling.
+* **Modern Interface:** Built a React frontend with an in-browser code editor and Markdown-rendered problem statements.
 
-- **4 decoupled services** — enqueuer, evaluation, problem management, and WebSocket delivery — each independently scalable and deployable.
-- **Isolated Docker-based code execution** to safely run untrusted submissions.
-- **Asynchronous evaluation pipeline** using BullMQ + Redis, decoupling submission intake from execution.
-- **Real-time verdicts** pushed to clients over WebSockets — no polling.
-- React frontend with an in-browser code editor and Markdown-rendered problem statements.
-
-**Tech:** `Node.js` `Fastify` `TypeScript` `Docker` `Redis` `MongoDB` `React`
+![Node.js](https://img.shields.io/badge/-Node.js-14161A?style=flat-square&logo=nodedotjs&logoColor=339933)
+![Fastify](https://img.shields.io/badge/-Fastify-14161A?style=flat-square&logo=fastify&logoColor=FFFFFF)
+![TypeScript](https://img.shields.io/badge/-TypeScript-14161A?style=flat-square&logo=typescript&logoColor=3178C6)
+![Docker](https://img.shields.io/badge/-Docker-14161A?style=flat-square&logo=docker&logoColor=2496ED)
+![Redis](https://img.shields.io/badge/-Redis-14161A?style=flat-square&logo=redis&logoColor=FF4438)
+![MongoDB](https://img.shields.io/badge/-MongoDB-14161A?style=flat-square&logo=mongodb&logoColor=47A248)
+![React](https://img.shields.io/badge/-React-14161A?style=flat-square&logo=react&logoColor=61DAFB)
 
 ---
 
